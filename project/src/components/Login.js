@@ -5,10 +5,22 @@ import TextInput from "./TextInput.js";
 import { Link } from "react-router-dom";
 import "../css/login.css";
 import { Form } from "react-bootstrap";
+import { userService } from "../services/userService.js";
 
 const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    userService
+      .loginUser({
+        email: e.target.email.value,
+        password: e.target.password.value,
+      })
+      .then((res)=> {
+        res.json();
+      })
+      .then((res) => {
+        console.log(res)
+      });
     console.log(
       "Login request:",
       "Email:",
@@ -32,7 +44,7 @@ const Login = () => {
         Нууц үгээ мартсан уу.
       </a>
 
-      <Buttons class={"loginTabletView"} type={"submit"} name={"login"} />
+      <Buttons class={"loginTabletView"} type={"submit"} value={"login"} />
 
       <p className="underline">эсвэл</p>
 
@@ -41,7 +53,7 @@ const Login = () => {
           className="registerButton"
           class={"loginTabletView"}
           type="submit"
-          name={"register"}
+          value={"register"}
         />
       </Link>
     </Form>

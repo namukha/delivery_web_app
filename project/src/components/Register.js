@@ -3,10 +3,24 @@ import React from "react";
 import TextInput from "./TextInput.js";
 import "../css/login.css";
 import { Form } from "react-bootstrap";
+import { userService } from "../services/userService.js";
 
 const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    userService
+      .registerUser({
+        email: e.target.email.value,
+        password: e.target.password.value,
+        name: "andy",
+        address: "Mongolia",
+      })
+      .then((res)=> {
+        res.json();
+      })
+      .then((res) => {
+        console.log(res)
+      });
     console.log(
       'Register request:',
       "Email:",
@@ -31,17 +45,17 @@ const Register = () => {
 
       <div className="agreeTo d-flex justify-content-between">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           value=""
           id="flexCheckDefault"
         />
-        <label class="form-check-label" for="flexCheckDefault">
+        <label className="form-check-label" for="flexCheckDefault">
           <a className="mb-4">Үйлчилгээний нөхцөл зөвшөөрөх</a>
         </label>
       </div>
 
-      <Buttons class={"signupTabletView"} type={"submit"} name={"Бүртгүүлэх"} />
+      <Buttons class={"signupTabletView"} type={"submit"} value={"Бүртгүүлэх"} />
     </Form>
   );
 };

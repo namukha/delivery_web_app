@@ -14,7 +14,7 @@ class SearchForm extends React.Component {
         return (
             <form className="search" onSubmit={this.handleSubmit}>
                 <div className="search_submit">
-                    <input type="text" class="inputMobile" aria-label="search" placeholder="Хайх" />
+                    <input type="text" className="inputMobile" aria-label="search" placeholder="Хайх" />
                     <button className="search_button" aria-label="submit search"><img src="/icons/search.svg" /></button>
                 </div>
                 <div className="search_input">

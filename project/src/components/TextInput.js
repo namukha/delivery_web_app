@@ -68,6 +68,7 @@ const TextInput = (props) => {
         <Form.Control
           className="input-field"
           placeholder="Нэрээ оруулна уу"
+          controlId="formName"
         />
       </div>
     )
