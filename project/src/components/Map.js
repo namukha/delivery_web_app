@@ -11,7 +11,7 @@ L.Icon.Default.mergeOptions({
 
 const DeliveryZone = () => {
     const position = [47.92341742, 106.93247223, 16]
-    var logo = {lat: 47.9237598, lng: 106.934300}
+    var logo = { lat: 47.9237598, lng: 106.934300 }
 
     return (
 
@@ -20,11 +20,11 @@ const DeliveryZone = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-             <Marker position={logo}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+            <Marker position={logo}>
+                <Popup>
+                    A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+            </Marker>
         </MapContainer>
     );
 };

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
 import '../css/modal.css'
-import AddFood from './AddFood';
 function TestModal(props) {
     const [show, setShow] = useState(true);
     const handleClose = () => {
@@ -26,8 +25,22 @@ function TestModal(props) {
                                 <h5 className='modalHeader'>Орц</h5>
                                 <p className='modalIngredients'>{props.data.ingredients}</p>
                             </div>
-
-                            <AddFood />
+                            <div>
+                                <h5 className='modalHeader'>Хэмжээ</h5>
+                                <div className='modalSizeButtons'>
+                                    <button className='sizeButton  activeButton '>1 хүн</button>
+                                    <button className='sizeButton '>2 хүн</button>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 className='modalHeader'>Тоо</h5>
+                                <div className='modalCounterButtons'>
+                                    <button className='counterButton '>-</button>
+                                    <p className='counterNumber '>1</p>
+                                    <button className='counterButton '>+</button>
+                                </div>
+                            </div>
+                            <button className='orderButton'>Захиалах</button>
                         </div>
                     </div>
                     <button className='closeButton' onClick={handleClose}>x</button>
