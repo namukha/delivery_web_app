@@ -2,12 +2,15 @@
 import React from "react";
 import Buttons from "./Button.js";
 import TextInput from "./TextInput.js";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../css/login.css";
 import { Form } from "react-bootstrap";
 import { userService } from "../services/userService.js";
+import { useUser } from "../contexts/UserContext.js";
 
 const Login = () => {
+  const history = useHistory();
+  const [user, setUser] = useUser();
   const handleSubmit = (e) => {
     e.preventDefault();
     userService
@@ -16,18 +19,22 @@ const Login = () => {
         password: e.target.password.value,
       })
       .then((res)=> {
-        res.json();
+        return res.json();
       })
-      .then((res) => {
-        console.log(res)
+      .then((data) => {
+        console.log(data.success)
+        if(data.success) {
+          userService.storeUserInfo(data);
+          setUser({
+            userName: data.data.name,
+            email: data.data.email,
+            address: data.data.address,
+          })
+          history.push("/")
+        } else {
+          alert("Failed to login")
+        }
       });
-    console.log(
-      "Login request:",
-      "Email:",
-      e.target.email.value,
-      "Password:",
-      e.target.password.value
-    );
   };
 
   return (

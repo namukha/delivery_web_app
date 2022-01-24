@@ -20,10 +20,11 @@ const registerUser = async (credentials) => {
 
 const storeUserInfo = (userInfo) => {
     localStorage.setItem("token", userInfo.token)
-    localStorage.setItem("userInfo", userInfo.data)
+    localStorage.setItem("userInfo", JSON.stringify(userInfo.data))
 }
 
 export const userService = {
     loginUser,
     registerUser,
+    storeUserInfo
 }
