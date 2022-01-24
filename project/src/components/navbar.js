@@ -112,7 +112,7 @@ const HeaderMenu = () => {
             </li>
           </ul>
           <div className="icons">
-            <SearchForm />
+            {/* <SearchForm /> */}
             <NavLink to="/login"><img className="mobileUser" src="/icons/mobileuser.svg" /></NavLink>
             <ul className="userBusket">
               <li className="userBusketList">
