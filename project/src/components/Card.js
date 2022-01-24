@@ -13,7 +13,7 @@ const Card = (props) => {
             <p>{props.name}</p>
             <div class="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
-                <div class="hoverText">Сагслах</div>
+                <div className="hoverText">Сагслах</div>
             </div>
             <div className="price">
                 <p className="activePrice">{new Intl.NumberFormat().format(props.price - props.price * props.percent / 100)}₮ </p>

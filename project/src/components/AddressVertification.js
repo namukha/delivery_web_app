@@ -25,11 +25,11 @@ const AddressVertification = () => {
         <div className="container">
             <div className="row my-2 py-2 ">
                 <div className="col-12 d-flex flex-column    col-lg-6">
-                    <p className="d-none d-md-block m-2 p-2 col-md-8  col-xl-7 shargal11 ">Алхам 1 > Хаягийн мэдээлэл оруулах</p>
+                    <p className="d-none d-md-block m-2 p-2 col-md-8  col-xl-7 shargal11 ">Алхам 1  Хаягийн мэдээлэл оруулах</p>
                     <div className="gadna my-3 ondorOghoos " >
                         <form action="" className="forms m-auto">
                             <p className="p-2 m-2 col-12 d-md-none text-shargal">Хаягын мэдээлэл</p>
-                            <p classNa me="d-none p-2 col-12 col-md-8 m-2 d-md-block align-items-start turshilt text-shargal"> Хаягаа оруулна уу</p>
+                            <p className="d-none p-2 col-12 col-md-8 m-2 d-md-block align-items-start turshilt text-shargal"> Хаягаа оруулна уу</p>
                             <div className="col-12 col-md-8 my-2 selectbox">
                                 <select name="" id="" onChange={togleShow} className={state == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"}>
                                     <option selected className="teneg" value="0"> Хан-Уул Дүүрэг </option>
@@ -75,7 +75,7 @@ const AddressVertification = () => {
 
                 </div>
                 <div className="col-12 d-none d-md-block col-lg-6  ">
-                    <p className="d-none d-md-block my-2 py-2 col-md-8 col-xl-7  shargal11 ">Алхам 2 > Захиалага баталгаажуулах</p>
+                    <p className="d-none d-md-block my-2 py-2 col-md-8 col-xl-7  shargal11 ">Алхам 2  Захиалага баталгаажуулах</p>
                     <form action="" method="POST">
                         <div className="gadna my-4 d-flex flex-column  justify-content-between ondorOghoos   " >
                             <div className="align-items-center d-flex flex-column justify-content-center ">

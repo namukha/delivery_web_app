@@ -52,7 +52,7 @@ const HeaderMenu = () => {
               <div className="dropMenuImg">
                 <img src="/icons/rounduser.svg" alt="" />
               </div>
-              <a className="dropMenuText">Хэрэглэгчийн мэдээлэл</a>
+              <a href="#" className="dropMenuText">Хэрэглэгчийн мэдээлэл</a>
             </div>
             <img className="seeMore" src="/icons/seemore.svg" alt="#" />
           </div>
@@ -61,7 +61,7 @@ const HeaderMenu = () => {
               <div className="dropMenuImg">
                 <img src="/icons/market.svg" alt="" />
               </div>
-              <a className="dropMenuText">Миний захиалга</a>
+              <a href="#" className="dropMenuText">Миний захиалга</a>
             </div>
             <img className="seeMore" src="/icons/seemore.svg" alt="#" />
           </div>
@@ -91,7 +91,7 @@ const HeaderMenu = () => {
               to="/"
             >
               <img className="logoImg" src="/img/img.png" />
-              <a className="logoText">Food Delivery</a>
+              <a href="#" className="logoText">Food Delivery</a>
             </NavLink>
           </div>
           <ul className="menu" id="basic-navbar-nav">
@@ -113,30 +113,30 @@ const HeaderMenu = () => {
           </ul>
           <div className="icons">
             <SearchForm />
-            <img className="mobileUser" src="/icons/mobileuser.svg" />
+            <NavLink to="/login"><img className="mobileUser" src="/icons/mobileuser.svg" /></NavLink>
             <ul className="userBusket">
               <li className="userBusketList">
                 <div className="userBusketElement">
                   <img src="/icons/busketicon.svg" />
-                  <a href="">Сагс</a>
+                  <a href="#">Сагс</a>
                 </div>
               </li>
               <li className="userBusketList">
                 <NavLink to="/login">
                   <div className="userBusketElement">
                     <img src="/icons/usericon.svg" />
-                    <a href="">Нэвтрэх</a>
+                    <a href="#">Нэвтрэх</a>
                   </div>
                 </NavLink>
               </li>
-              <li className="userBusketList">
+              {/* <li className="userBusketList">
                 <NavLink to="/userProfile">
                   <div className="userBusketElement">
                     <img src="/icons/usericon.svg" />
-                    <a href="">Хэрэглэгч</a>
+                    <a href="#">Хэрэглэгч</a>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

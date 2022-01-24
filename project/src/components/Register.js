@@ -51,7 +51,7 @@ const Register = () => {
           id="flexCheckDefault"
         />
         <label className="form-check-label" for="flexCheckDefault">
-          <a className="mb-4">Үйлчилгээний нөхцөл зөвшөөрөх</a>
+          <a href="#" className="mb-4">Үйлчилгээний нөхцөл зөвшөөрөх</a>
         </label>
       </div>
 
