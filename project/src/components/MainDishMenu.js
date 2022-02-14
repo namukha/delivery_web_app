@@ -1,39 +1,32 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { foodServices } from "../services/foodServices";
+import { useFood } from "../contexts/FoodContext";
 
 function MainDishMenu() {
-  // const [mainMenu, setMainMenu] = useState([]);
+  const [foods] = useFood();
+  const [mainMenu, setMainMenu] = useState([]);
   useEffect(() => {
-    foodServices
-      .getFoodAPI()
-      .then((r) => r.json())
-      // .then((data) => setMainMenu(data));
-      .then((data) => {
-        let menu = data.data.filter((j) => j.category === "Yндсэн хоол")
-        console.log(menu);
-      })
-  }, []);
+    setMainMenu(
+      foods
+        .filter((p) => {
+          return p.category === "үндсэн хоол"
+        })
+        .slice(0, 4)
+    )
 
-  // let menu = mainMenu.filter((j) => j.category === "үндсэн хоол");
+  }, [foods])
   return (
     <Container>
       <div className="row">
-        {/* {menu.map((data) => {
+        {mainMenu.map((data) => {
           return (
             <Card
-              name={data.name}
-              price={data.price}
-              portion={data.portion}
-              stock={data.stock}
-              img={data.img}
-              category={data.category}
-              ingredients={data.ingredients}
+              data = {data}
             />
           );
-        })} */}
+        })}
       </div>
     </Container>
   );
