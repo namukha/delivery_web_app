@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
-import "../css/offcanvas.css";
+// import "../css/offcanvas.css";
 import CartItems from "./CartItems";
 
 function CartSidebar() {

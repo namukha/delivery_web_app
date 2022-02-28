@@ -1,7 +1,7 @@
 import React from "react";
-import Meal from "../img/meal.png"
-import DeleteMeal from "../img/delete_meal.png"
-import "../css/cartItems.css"
+import Meal from "../img/gif.png"
+import DeleteMeal from "../img/gif.png"
+// import "../css/cartItems.css"
 
 function CartItems() {
     return (
