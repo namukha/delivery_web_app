@@ -15,8 +15,8 @@ const Login = () => {
     e.preventDefault();
     userService
       .loginUser({
-        email: e.target.email.value,
-        password: e.target.password.value,
+        email: e.target.elements.email.value,
+        password: e.target.elements.password.value,
       })
       .then((res)=> {
         return res.json();

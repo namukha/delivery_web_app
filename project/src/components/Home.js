@@ -4,7 +4,7 @@ import InfoPanel from "./InfoPanel";
 import Slider from "./Slider";
 import "../../src/App.css"
 import CategoryLabel from "./CategoryLabel";
-import AddressVertification from "./AddressVertification";
+import NewPassword from "./NewPassword"
 
 function Home() {
     return (
@@ -12,7 +12,6 @@ function Home() {
             <Slider />
             <InfoPanel />
             <CategoryLabel/>
-            <AddressVertification/>
         </div>
     );
 
