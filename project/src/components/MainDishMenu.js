@@ -15,6 +15,7 @@ function MainDishMenu() {
         })
         .slice(0, 4)
     )
+    console.log(foods);
 
   }, [foods])
   return (
@@ -23,7 +24,14 @@ function MainDishMenu() {
         {mainMenu.map((data) => {
           return (
             <Card
-              data = {data}
+              // data={data}
+              img={data.img}
+              name={data.name}
+              discountPrice={data.discountPrice}
+              price={data.price}
+              sales={data.sales}
+              percent={data.discountPercentage}
+              ingredients={data.ingredients}
             />
           );
         })}
