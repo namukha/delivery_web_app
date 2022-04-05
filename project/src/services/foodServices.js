@@ -7,11 +7,11 @@ const getFoodAPI = async () => {
     })
 }
 
-const basketItem = async () => {
-    return await fetch ("https://dev-api.mstars.mn/api/foods", {
-        method: "POST"
-    })
-}
+// const basketItem = async () => {
+//     return await fetch ("https://dev-api.mstars.mn/api/foods", {
+//         method: "POST"
+//     })
+// }
 
 export const foodServices = {
     getFoodAPI,

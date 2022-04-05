@@ -3,24 +3,29 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useFood } from "../contexts/FoodContext";
 
 function Salad() {
-  const [mainMenu, setMainMenu] = useState([]);
-  const [show, setShow] = useState(false);
+  const [foods] = useFood()
+  const [salad, setSalad] = useState([])
   useEffect(() => {
-    fetch("../data/foods.json")
-      .then((response) => response.json())
-      .then((data) => setMainMenu(data));
-  }, []);
-  let menu = mainMenu.filter((m) => m.category === "салад ба зууш").slice(0, 4);
+    setSalad(
+      foods
+        .filter((p) => {
+          return p.category === "Салад ба зууш"
+        })
+        .slice(0, 4)
+    )
+  }, [foods]);
 
   return (
     <Container>
       <div className="row">
-        {menu.map((data) =>
+        {salad.map((data, index) =>
         (
           <Card
-            img={data.img}
+            key={index}
+            img={data.image}
             name={data.name}
             discountPrice={data.discountPrice}
             price={data.price}

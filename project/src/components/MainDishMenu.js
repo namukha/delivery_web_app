@@ -11,21 +11,20 @@ function MainDishMenu() {
     setMainMenu(
       foods
         .filter((p) => {
-          return p.category === "үндсэн хоол"
+          return p.category === "Үндсэн хоол"
         })
         .slice(0, 4)
     )
-    console.log(foods);
-
   }, [foods])
   return (
     <Container>
       <div className="row">
-        {mainMenu.map((data) => {
+        {mainMenu.map((data, index) => {
           return (
             <Card
               // data={data}
-              img={data.img}
+              key={index}
+              img={data.image}
               name={data.name}
               discountPrice={data.discountPrice}
               price={data.price}

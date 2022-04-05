@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 // import "../css/offcanvas.css";
-import CartItems from "./CartItems";
+
 
 function CartSidebar() {
   const [show, setShow] = useState(false);
@@ -31,7 +31,7 @@ function CartSidebar() {
         </Offcanvas.Header>
         <span className="title-underline"></span>
         <Offcanvas.Body>
-          <CartItems />
+          {/* <CartItems /> */}
         </Offcanvas.Body>
       </Offcanvas>
     </>

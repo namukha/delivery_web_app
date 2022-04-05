@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useFood } from "../contexts/FoodContext";
 
 function Sales() {
+  const [foods] = useFood();
   const [sale, setSale] = useState([]);
   useEffect(() => {
-    fetch("../data/foods.json")
-      .then((response) => response.json())
-      .then((data) => setSale(data));
-  }, []);
-  let mainSales = sale.filter((i) => i.sales === true).slice(0, 4);
+    setSale(
+      foods
+        .filter((p) => {
+          return p.sales === true
+        })
+        .slice(0, 4)
+    )
+  }, [foods]);
   return (
     <Container>
       <div className="row ">
-        {mainSales.map((i) => (
+        {sale.map((i, index) => (
           <Card
-            img={i.img}
+            key={index}
+            img={i.image}
             name={i.name}
             discountPrice={i.discountPrice}
             price={i.price}
